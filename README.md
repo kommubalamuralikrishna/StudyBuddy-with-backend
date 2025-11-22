@@ -120,6 +120,8 @@ DELETE /api/links/:topic
 
 🖼️ Screenshots
 <img width="1895" height="990" alt="image" src="https://github.com/user-attachments/assets/3689ff6b-0a0d-4fa9-89bc-10906c549b22" />
+<img width="1919" height="971" alt="image" src="https://github.com/user-attachments/assets/f0dd556e-82ab-411a-9d26-9c8591a1e67d" />
+<img width="1170" height="693" alt="image" src="https://github.com/user-attachments/assets/78f59bb9-a4db-4048-b6e5-402ec770ca30" />
 
 
 🤝 Contributing
