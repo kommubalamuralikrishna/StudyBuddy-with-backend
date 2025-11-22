@@ -11,15 +11,27 @@
     <h1>📚 StudyBuddy</h1>
     <p>A collaborative study planner for students</p>
 
+    <!-- Search existing topic -->
+    <h3>🔍 Search Topic</h3>
     <div class="input-group">
       <input type="text" id="taskInput" placeholder="Search topic like DSA, DBMS, OOPS...">
       <button onclick="addTask()">Search</button>
     </div>
 
-    <!-- Message area (already styled in your CSS) -->
+    <!-- Add new favourite link -->
+    <h3 style="margin-top: 25px;">➕ Save Your Favourite Link</h3>
+    <div class="input-group">
+      <input type="text" id="newTopic" placeholder="Keyword (e.g. os, cn, ai)">
+    </div>
+    <div class="input-group" style="margin-top: 8px;">
+      <input type="text" id="newUrl" placeholder="Website URL (https://...)">
+      <button onclick="saveLink()">Save Link</button>
+    </div>
+
+    <!-- Message area -->
     <div id="message" class="message"></div>
 
-    <!-- List to show searched topics -->
+    <!-- List to show searched topics history -->
     <ul id="taskList"></ul>
   </div>
 
