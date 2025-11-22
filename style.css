@@ -1,91 +1,211 @@
-body {
+/* Global styles */
+* {
+  box-sizing: border-box;
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f0f4f8;
+  padding: 0;
+  font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  padding: 20px;
+  background: radial-gradient(circle at top, #1d4ed8, #020617);
+  color: #e5e7eb;
 }
 
+/* Main container */
 .container {
-  background: white;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.1);
-  width: 350px;
+  background: rgba(15, 23, 42, 0.96);
+  padding: 28px 24px;
+  border-radius: 18px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(148, 163, 184, 0.3);
+}
+
+/* Titles */
+h1 {
+  font-size: 1.8rem;
+  margin-bottom: 4px;
   text-align: center;
 }
 
-h1 {
-  margin-bottom: 10px;
+.container > p {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin-bottom: 18px;
 }
 
+h3 {
+  font-size: 1rem;
+  margin-top: 12px;
+  margin-bottom: 6px;
+  color: #e5e7eb;
+}
+
+/* Input groups */
 .input-group {
   display: flex;
-  margin-top: 20px;
+  gap: 8px;
+  margin-top: 10px;
 }
 
-input {
+.input-group input {
   flex: 1;
-  padding: 10px;
-  border: 2px solid #ddd;
-  border-radius: 8px 0 0 8px;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="number"] {
+  padding: 10px 11px;
+  border-radius: 10px;
+  border: 1px solid #4b5563;
+  background: #020617;
+  color: #e5e7eb;
+  font-size: 0.9rem;
   outline: none;
+  transition: border 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
 
+input::placeholder {
+  color: #6b7280;
+}
+
+input:focus {
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.4);
+  background: #020617;
+}
+
+/* Buttons */
 button {
-  padding: 10px 20px;
+  padding: 10px 16px;
+  border-radius: 10px;
   border: none;
-  background-color: #5c6bc0;
-  color: white;
-  border-radius: 0 8px 8px 0;
   cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.15s ease;
 }
 
+/* Primary actions */
+button[onclick*="addTask"] {
+  background: linear-gradient(135deg, #f97316, #facc15);
+  color: #111827;
+}
+
+button[onclick*="saveLink"] {
+  background: linear-gradient(135deg, #22c55e, #a3e635);
+  color: #052e16;
+}
+
+/* Generic hover effect */
 button:hover {
-  background-color: #3f51b5;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4);
 }
 
+/* List of searched topics */
 ul {
   list-style: none;
   padding: 0;
-  margin-top: 20px;
-  text-align: left;
+  margin-top: 16px;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+/* Scrollbar styling (optional) */
+ul::-webkit-scrollbar {
+  width: 6px;
+}
+ul::-webkit-scrollbar-track {
+  background: #020617;
+}
+ul::-webkit-scrollbar-thumb {
+  background: #4b5563;
+  border-radius: 999px;
 }
 
 li {
-  background: #e8eaf6;
-  padding: 10px;
-  border-radius: 6px;
-  margin-bottom: 10px;
+  background: rgba(15, 23, 42, 0.95);
+  border-radius: 10px;
+  padding: 9px 10px;
+  margin-bottom: 8px;
+  font-size: 0.85rem;
+  color: #e5e7eb;
+  border: 1px solid rgba(75, 85, 99, 0.8);
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
-li.completed {
-  text-decoration: line-through;
-  background-color: #c5cae9;
-  color: #777;
-}
-
+/* If you ever add buttons inside li later */
 li button {
   background: transparent;
+  color: #f97316;
+  padding: 0;
   border: none;
-  color: #f44336;
-  font-size: 16px;
-  cursor: pointer;
+  font-size: 0.85rem;
 }
 
+/* Message text */
 .message {
-  margin-top: 15px;
-  font-weight: bold;
-  color: #333;
+  margin-top: 14px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  text-align: left;
 }
+
 .message.success {
-  color: green;
+  color: #bbf7d0;
+  background: rgba(22, 163, 74, 0.15);
+  border-color: rgba(22, 163, 74, 0.6);
 }
+
 .message.error {
-  color: red;
+  color: #fecaca;
+  background: rgba(220, 38, 38, 0.15);
+  border-color: rgba(220, 38, 38, 0.6);
+}
+
+/* Small screen tweaks */
+@media (max-width: 480px) {
+  .container {
+    padding: 22px 18px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .input-group {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
+li button {
+  background: none;
+  border: none;
+  color: #f87171;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+li button:hover {
+  color: #ef4444;
+  transform: scale(1.2);
 }
